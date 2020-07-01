@@ -1,0 +1,1 @@
+/home/zezin/.config/suckless/st/patch/st_include.c

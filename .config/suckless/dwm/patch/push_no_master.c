@@ -1,0 +1,1 @@
+/home/zezin/.config/suckless/dwm/patch/push_no_master.c

@@ -1,0 +1,1 @@
+/home/zezin/.config/ranger/commands.py

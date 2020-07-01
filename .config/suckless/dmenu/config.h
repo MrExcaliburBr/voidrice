@@ -1,0 +1,1 @@
+/home/zezin/.config/suckless/dmenu/config.h
