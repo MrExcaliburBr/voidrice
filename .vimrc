@@ -1,1 +1,0 @@
-/home/zezin/.vim/vimrc

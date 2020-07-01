@@ -1,1 +1,0 @@
-/home/zezin/.config/suckless/dwm/patch/layout_facts.c

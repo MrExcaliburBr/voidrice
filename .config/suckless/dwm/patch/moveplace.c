@@ -1,1 +1,0 @@
-/home/zezin/.config/suckless/dwm/patch/moveplace.c
