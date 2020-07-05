@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
-let g:netrw_dirhist_6='/home/zezin/.config/spectrwm'
-let g:netrw_dirhist_5='/home/zezin/.vim'
-let g:netrw_dirhist_4='/home/zezin/.tmux/plugins/tpm/scripts'
-let g:netrw_dirhist_3='/home/zezin/.tmux/plugins/tpm'
-let g:netrw_dirhist_2='/home/zezin/.newsboat'
-let g:netrw_dirhist_1='/home/zezin/.config/ranger'
