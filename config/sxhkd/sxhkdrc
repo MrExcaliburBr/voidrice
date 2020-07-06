@@ -68,7 +68,7 @@ shift + ctrl + Left
 
 #Alsamixer
 super + p
-	st -e alsamixer
+	passmenu
 
 #Shutdown/Reboot/Lock
 super + shift + x 
