@@ -83,7 +83,7 @@ set number				" Show line numbers
 autocmd BufRead,BufNewFile *.ms,*.me,*.mom set filetype=groff
 
 "" Auto reset sxhkd on changes
-autocmd BufWritePost sxhkdrc :silent exec "!pkill -USR1 -x sxhkd"
+autocmd BufWritePost sxhkdrc :silent exec "!pkill sxhkd && sxhkd &"
 
 "" Auto-compile sukcless config files
 autocmd BufWritePost config.h,config.def.h !sudo make install 

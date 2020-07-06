@@ -114,6 +114,8 @@ export LESSKEY="$XDG_CONFIG_HOME"/less/lesskey
 export LESSHISTFILE=-
 export HISTFILE="$XDG_DATA_HOME"/zsh/history
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 
 # vi mode
 bindkey -v
@@ -134,7 +136,7 @@ alias clo='cloner.sh'
 alias se='fuzzyfinder.sh'
 alias la='ls -A'
 alias ..='cd ..'
-alias xin='sudo xbps-install -S'
+alias xi='sudo xbps-install -S'
 alias xu='sudo xbps-install -Su'
 alias xq='xbps-query'
 alias xr='sudo xbps-remove'
