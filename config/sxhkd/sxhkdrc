@@ -2,15 +2,15 @@
 
 #Brightness
 super + Left 
-	xbacklight -dec 10
+	brightness.sh down	
 
 super + Right	
-	xbacklight -inc 10
+	brightness.sh up	
 
 #==========================
 
 #==========================================================================================================================================================================================================================
-#Qutebrowser (Alias hqutebrowser to hardware accel)
+#Qutebrowser
 
 ########################################
 #Q = Duck Duck go                      #
@@ -42,10 +42,13 @@ super + q ; {Return}
 
 #Volume Up/Down 
 super + Up
-	amixer -c 1 sset Master 5%+
+	volume.sh up
 
 super + Down 
-	amixer -c 1 sset Master 5%-
+	volume.sh down
+
+super + m
+	volume.sh mute
 
 #Music Play, Pause, Next, Prev
 shift + ctrl + Up
