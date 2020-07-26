@@ -102,21 +102,25 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 config.bind('<Ctrl-Shift-y>', 'hint links spawn --detach mpv --autofit-larger=35%x35% --force-window=yes {hint-url}')
 
 #Dark mode if avaible
-c.colors.webpage.prefers_color_scheme_dark=True
+#c.colors.webpage.prefers_color_scheme_dark=True
 
 #Toggle tabs and status bar
-config.set('statusbar.hide', True)
-config.set('tabs.show', 'never')
-config.bind('xx', 'config-cycle statusbar.hide ;; config-cycle tabs.show always switching') 
+c.statusbar.show = "never"
+c.tabs.show ='never'
+config.bind('xx', 'config-cycle statusbar.show always never;; config-cycle tabs.show always switching') 
 
 #Downloading youtube music
 config.bind('<Ctrl-Shift-m>', 'hint links spawn --detach youtube-dl -x --audio-format mp3 {hint-url}')
+
+#Downloading torrents
+config.bind('<Ctrl-Shift-b>', 'hint links spawn --detach torrents.sh {hint-url}')
 
 #Default download direct
 c.downloads.location.directory = "~/dl"
 
 #Font
-c.fonts.tabs = "CozetteVector"
+c.fonts.tabs.selected = "CozetteVector"
+c.fonts.tabs.unselected = "CozetteVector"
 c.fonts.default_family = "CozetteVector"
 c.fonts.default_size = "14px"
 c.fonts.contextmenu = "CozetteVector"

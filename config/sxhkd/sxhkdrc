@@ -52,7 +52,7 @@ super + m
 
 #Music Play, Pause, Next, Prev
 shift + ctrl + Up
-	st -e cmus & sleep 1s && cmus-remote -p & st -e alsamixer
+	st -e tmux new-session -A -s cmus tmux linkw -s master:mus
 
 shift + ctrl + Down
 	cmus-remote -u
@@ -71,7 +71,7 @@ shift + ctrl + Left
 
 #Alsamixer
 super + p
-	passmenu
+	st -e passmenu
 
 #Shutdown/Reboot/Lock
 super + shift + x 
@@ -79,11 +79,15 @@ super + shift + x
 
 #File Manager
 super + f
-	st -e ranger
+	st -e tmux new-session -A -s nnn tmux linkw -s master:fm
 
 #Newsboat
 super + n
-	st -e newsboat
+	st -e tmux new-session -A -s newsboat tmux linkw -s master:new
+
+#Cordless
+super + c
+	st -e tmux new-session -A -s cordless tmux linkw -s master:chat
 
 #Emoji
 super + e 

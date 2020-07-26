@@ -102,10 +102,11 @@ export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_CACHE_HOME="$HOME"/.cache
 
 # default programs
-export EDITOR="vim"
+export EDITOR="nvim"
 export TERMINAL="st"
 export BROWSER="qutebrowser"
 export READER="zathura"
+export VISUAL="nvim"
 
 # ~/ cleanup
 export TASKDATA="$XDG_DATA_HOME"/task
@@ -116,6 +117,8 @@ export HISTFILE="$XDG_DATA_HOME"/zsh/history
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
 
 # vi mode
 bindkey -v
@@ -129,22 +132,30 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
+bindkey "^E" edit-command-line
 
 #aliases
+alias nnn='nnn -e'
+alias tmux='tmux -2'
 alias clo='cloner.sh'
 alias se='fuzzyfinder.sh'
 alias la='ls -A'
 alias ..='cd ..'
-alias xi='sudo xbps-install -S'
-alias xu='sudo xbps-install -Su'
+alias xi='sudo xbps-install'
 alias xq='xbps-query'
 alias xr='sudo xbps-remove'
 alias weather='curl wttr.in'
-alias discord='/usr/lib/discord/Discord'
+alias tmaster='tmux-autostart.sh'
+alias tfm='tmux new-session -A -s ranger tmux linkw -s master:fm'
+alias tsm='tmux new-session -A -s sys tmux linkw -s master:sm'
+alias tmus='tmux new-session -A -s cmus tmux linkw -s master:mus'
+alias tnew='tmux new-session -A -s newsboat tmux linkw -s master:new'
+alias tchat='tmux new-session -A -s cordless tmux linkw -s master:chat'
+alias tkill='tmux kill-session -t'
+alias tkillall='tmux kill-server'
+alias tbind='vim .config/tmux/tmux-cheatsheet.markdown'
+alias tls='tmux ls'
 
 source "$XDG_CONFIG_HOME/oh-my-zsh/custom/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 source "$XDG_CONFIG_HOME/oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 
-tmux
-clear

@@ -54,6 +54,6 @@ picom -b &
 dunst &
 feh --randomize --bg-fill ~/pix/wall/gruvboxy
 unclutter &
-setxkbmap -layout us,br -option grp:alt_space_toggle -option caps:escape_shifted_capslock
+setxkbmap -layout us,br -option grp:rctrl_rshift_toggle -option caps:escape_shifted_capslock
 exec /usr/local/bin/dwm
 #exec /usr/bin/spectrwm
