@@ -23,7 +23,7 @@ Plug 'hardcoreplayers/dashboard-nvim'	    " Another Startscreen
 " Stuff for usability
 Plug 'jiangmiao/auto-pairs'		    " Close parenthesis and those kind of stuff
 Plug 'tpope/vim-surround'		    " Change things surrouding words
-Plug 'liuchengxu/vim-clap'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary'  }
 Plug 'tpope/vim-obsession'		    " Plugin for tmux ressurect
 Plug 'scrooloose/syntastic'		    " Highlight compile and syntax error
 Plug 'psliwka/vim-smoothie'		    " Smooth up and down 
@@ -132,9 +132,9 @@ filetype plugin on
 let g:clap_theme = 'gruvbox'
 let g:mapleader="\<Space>"
 nnoremap <silent> <leader>fh :Clap history <CR>
-nnoremap <silent> <leader>ff :Clap files ++finder=rg --ignore --hidden --files <CR>
+nnoremap <silent> <leader>ff :Clap files <CR>
 nnoremap <silent> <leader>tc :Clap colors <CR>
-nnoremap <silent> <leader>fw :Clap grep <CR>
+nnoremap <silent> <leader>fw :Clap grep2 <CR>
 nnoremap <silent> <leader>fb :Clap marks <CR>
 
 "}}}
