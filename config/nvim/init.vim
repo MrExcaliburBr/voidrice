@@ -23,7 +23,9 @@ Plug 'hardcoreplayers/dashboard-nvim'	    " Another Startscreen
 " Stuff for usability
 Plug 'jiangmiao/auto-pairs'		    " Close parenthesis and those kind of stuff
 Plug 'tpope/vim-surround'		    " Change things surrouding words
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary'  }
+"Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary'  }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-obsession'		    " Plugin for tmux ressurect
 Plug 'scrooloose/syntastic'		    " Highlight compile and syntax error
 Plug 'psliwka/vim-smoothie'		    " Smooth up and down 
@@ -126,32 +128,32 @@ let g:vimwiki_list = [{'path':$HOME . '/dox/vimwiki',
 "set nocompatible
 filetype plugin on 
 
-"}}}
 
-"Vim Clap {{{
-let g:clap_theme = 'gruvbox'
-let g:mapleader="\<Space>"
-nnoremap <silent> <leader>fh :Clap history <CR>
-nnoremap <silent> <leader>ff :Clap files <CR>
-nnoremap <silent> <leader>tc :Clap colors <CR>
-nnoremap <silent> <leader>fw :Clap grep2 <CR>
-nnoremap <silent> <leader>fb :Clap marks <CR>
+"Plugins
 
-"}}}
+"Ranger
+let g:ranger_map_keys = 0
 
-"Dashboard {{{
-let g:dashboard_default_executive ='clap'
+"vim fzf
+let mapleader = "\<Space>"				
+nnoremap <silent> <Leader>fh :History<CR>
+nnoremap <silent> <Leader>ff :Files<CR>
+nnoremap <silent> <Leader>tc :Colors<CR>
+nnoremap <silent> <Leader>fa :Rg<CR>
+nnoremap <silent> <Leader>fb :Marks<CR>
+
+"Dashboard
+let g:dashboard_default_executive ='fzf'
 nmap <leader>ss :SessionSave<CR>
 nmap <leader>sl :SessionLoad<CR>
 
-let g:dashboard_custom_section={
-  \ 'last_session' : [' Recently last session                 SPC s l'],
-  \ 'find_history' : [' Recently opened files                 SPC f h'],
-  \ 'find_file' : [' Find  File                            SPC f f'],
-  \ 'change_colorscheme' : [' Change Colorscheme                    SPC t c'],
-  \ 'find_word' :[' Find  word                            SPC f w'],
-  \ 'book_marks' :[' Jump to book marks                    SPC f b'],
-  \ 'vim_wiki' :[' Go to Wiki                            SPC w w'],
+let g:dashboard_custom_shortcut={
+  \ 'last_session'       : 'SPC s l',
+  \ 'find_history'       : 'SPC f h',
+  \ 'find_file'          : 'SPC f f',
+  \ 'change_colorscheme' : 'SPC t c',
+  \ 'find_word'          : 'SPC f a',
+  \ 'book_marks'         : 'SPC f b',
   \ }
 
 function VIM_WIKI()
@@ -346,7 +348,6 @@ autocmd	BufWritePost *.ms :silent exec "!groff -ms % -T pdf > %.pdf"
 "}}}
 
 "" Bindings {{{
-let mapleader = "\<Space>"				
 nnoremap <leader>h <C-w>h			
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
