@@ -47,7 +47,7 @@ call plug#end()
 
 "" General configurations {{{
 " General
-set number				    " Show line numbers
+set number relativenumber				    " Show line numbers
 set ruler				    " Show row and column ruler information
 set linebreak				    " Break lines at word (requires Wrap lines)
 set showbreak=+++ 			    " Wrap-broken line prefix
