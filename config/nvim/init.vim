@@ -16,8 +16,7 @@ call plug#begin('~/.vim/plugged')
 " Stuff for aesthetics
 Plug 'morhetz/gruvbox'			    " Gruvbox theme
 Plug 'itchyny/lightline.vim'		    " Status line
-Plug 'ap/vim-css-color'			    " Preview color codes
-Plug 'nathanaelkane/vim-indent-guides'	    " Plugin for highlight indentation
+Plug 'norcalli/nvim-colorizer.lua'	    " Preview color codes
 Plug 'hardcoreplayers/dashboard-nvim'	    " Another Startscreen
 
 " Stuff for usability
@@ -32,14 +31,17 @@ Plug 'psliwka/vim-smoothie'		    " Smooth up and down
 Plug 'godlygeek/tabular'		    " Align text
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vim-which-key'		    " Which binds are assing to this key
-"Plug 'mcchrish/nnn.vim'			    " File manager
-Plug 'francoiscabrol/ranger.vim'
+Plug 'mcchrish/nnn.vim'			    " File manager
+"Plug 'francoiscabrol/ranger.vim'
 
 " Extra funcionality stuff
 Plug 'vimwiki/vimwiki'			    " Vimwiki (for notetaking)
 Plug 'plasticboy/vim-markdown'		    " Markdown syntax highliting (mostly for VimWiki)
-Plug 'dhruvasagar/vim-table-mode'	    " Draw table easely	(mostly for markdown tables)
-Plug 'iamcco/markdown-preview.nvim'
+Plug 'dhruvasagar/vim-table-mode'	    " Draw tables easely (mostly for markdown tables)
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
+"TODO
+"vim tmux navvigation 
 
 call plug#end() 
 
@@ -49,9 +51,10 @@ call plug#end()
 " General
 set number relativenumber				    " Show line numbers
 set ruler				    " Show row and column ruler information
+set wrap
 set linebreak				    " Break lines at word (requires Wrap lines)
-set showbreak=+++ 			    " Wrap-broken line prefix
-"set textwidth=100			    " Line wrap (number of cols)
+"set showbreak=+++ 			    " Wrap-broken line prefix
+set textwidth=100			    " Line wrap (number of cols)
 set showmatch				    " Highlight matching brace
 set hlsearch				    " Highlight all search results
 set smartcase				    " Enable smart-case search
@@ -121,18 +124,24 @@ let g:syntastic_check_on_wq = 0
 "}}}
 
 "Vimwiki {{{
-let g:vimwiki_root = $HOME . '/dox/vimwiki'
-let g:vimwiki_list = [{'path':$HOME . '/dox/vimwiki',
+let g:vimwiki_root = $HOME . '/dox/'
+let g:vimwiki_list = [{'path':$HOME . '/dox/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
-"set nocompatible
+set nocompatible
 filetype plugin on 
 
 
 "Plugins
 
 "Ranger
-let g:ranger_map_keys = 0
+"let g:ranger_map_keys = 0
+
+"nnn
+let g:nnn#set_default_mappings = 0
+let g:nnn#command = 'nnn -e'
+let $NNN_PLUG='f:fzcd;y:x2sel'
+nnoremap <silent> <Leader>nn :NnnPicker<CR>
 
 "vim fzf
 let mapleader = "\<Space>"				
@@ -146,21 +155,22 @@ nnoremap <silent> <Leader>fb :Marks<CR>
 let g:dashboard_default_executive ='fzf'
 nmap <leader>ss :SessionSave<CR>
 nmap <leader>sl :SessionLoad<CR>
+nnoremap <silent> <Leader>cn :<C-u>DashboardNewFile<CR>
 
-let g:dashboard_custom_shortcut={
-  \ 'last_session'       : 'SPC s l',
-  \ 'find_history'       : 'SPC f h',
-  \ 'find_file'          : 'SPC f f',
-  \ 'change_colorscheme' : 'SPC t c',
-  \ 'find_word'          : 'SPC f a',
-  \ 'book_marks'         : 'SPC f b',
-  \ }
+"let g:dashboard_custom_shortcut_icon={}
+"let g:dashboard_custom_shortcut_icon['change_colorscheme'] = ''
 
-function VIM_WIKI()
-    :VimwikiIndex
-endfunction
 
-  let g:dashboard_custom_header = [
+ let g:dashboard_custom_shortcut_icon={}
+ let g:dashboard_custom_shortcut_icon['last_session'] = ' '
+ let g:dashboard_custom_shortcut_icon['find_history'] = ' '
+ let g:dashboard_custom_shortcut_icon['find_file'] = ' '
+ let g:dashboard_custom_shortcut_icon['new_file'] = ' '
+ let g:dashboard_custom_shortcut_icon['change_colorscheme'] = ' '
+ let g:dashboard_custom_shortcut_icon['find_word'] = ' '
+ let g:dashboard_custom_shortcut_icon['book_marks'] = ' '
+
+let g:dashboard_custom_header = [
         \ '',
 	\ '███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗', 
 	\ '████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║', 
@@ -174,7 +184,7 @@ endfunction
 "}}}
 
 " Ranger
-let g:ranger_replace_netrw = 1 
+"let g:ranger_replace_netrw = 1 
 
 "Coc {{{
 " TextEdit might fail if hidden is not "set.
@@ -340,7 +350,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 autocmd BufRead,BufNewFile *.ms,*.me,*.mom set filetype=groff
 
 "Auto-compile groff documents
-autocmd	BufWritePost *.ms :silent exec "!groff -ms % -T pdf > %.pdf"
+autocmd	BufWritePost *.ms :silent exec "!groff -ms -K utf8 % -T pdf > %.pdf"
 
 " Auto-compile suckless config files
 "autocmd BufWritePost config.h,config.def.h :term sudo make install 
@@ -354,10 +364,8 @@ nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 nnoremap <leader>v :sp <CR>
 nnoremap <leader>b :vsp <CR>
-nnoremap <leader>c :tabnew <CR>
 nnoremap <silent> <leader>q :Dashboard <CR>
 nnoremap <silent> <leader>x :quit! <CR>
-nnoremap <silent> <leader>wa :write <CR>
 nnoremap <silent> <leader>wq :write <CR> :Dashboard <CR>
 nnoremap <leader>p gT
 nnoremap <leader>n gt

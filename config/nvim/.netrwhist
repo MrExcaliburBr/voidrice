@@ -1,3 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/zezin/.config/newsboat'
+let g:netrw_dirhist_7='/etc/sv/bluez-alsa/supervise'
+let g:netrw_dirhist_6='/etc/runit/runsvdir/default/bluez-alsa/supervise'
+let g:netrw_dirhist_5='/etc/runit/runsvdir/default/bluez-alsa'
+let g:netrw_dirhist_4='/usr/share/doc/NetworkManager/examples'
+let g:netrw_dirhist_3='/usr/share/doc/NetworkManager'
+let g:netrw_dirhist_2='/usr/share/X11/xkb'
 let g:netrw_dirhist_1='/home/zezin/.config/sxhkd'

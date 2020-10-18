@@ -99,7 +99,7 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 #Opening vids on mpv
-config.bind('<Ctrl-Shift-y>', 'hint links spawn --detach mpv --autofit-larger=35%x35% --force-window=yes {hint-url}')
+config.bind('<Ctrl-Shift-y>', 'hint links spawn --detach mpv --hwdec=vaapi --vo=vaapi --autofit-larger=35%x35% --force-window=yes {hint-url}')
 
 #Dark mode if avaible
 #c.colors.webpage.prefers_color_scheme_dark=True
@@ -405,3 +405,19 @@ c.colors.tabs.selected.even.bg = base05
 # Background color for webpages if unset (or empty to use the theme's
 # color).
 # c.colors.webpage.bg = base00
+
+
+#Block adds
+from qutebrowser.api import interceptor
+
+
+def filter_yt(info: interceptor.Request):
+	"""Block the given request if necessary."""
+	url = info.request_url
+	if (url.host() == 'www.youtube.com' and
+			url.path() == '/get_video_info' and
+			'&adformat=' in url.query()):
+		info.block()
+
+
+interceptor.register(filter_yt)

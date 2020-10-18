@@ -107,6 +107,7 @@ export TERMINAL="st"
 export BROWSER="qutebrowser"
 export READER="zathura"
 export VISUAL="nvim"
+export TMUX=""
 
 # ~/ cleanup
 export TASKDATA="$XDG_DATA_HOME"/task
@@ -119,6 +120,7 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export NNN_PLUG='f:fzcd;y:x2sel'
 
 # vi mode
 bindkey -v
@@ -134,7 +136,31 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 autoload edit-command-line; zle -N edit-command-line
 bindkey "^E" edit-command-line
 
+#Auto tmux
+if [ -n "$PS1" ] &&
+	[ -n "$DISPLAY" ] &&
+	[[ ! "$TERM" =~ linux ]] &&
+	[[ ! "$TERM" =~ tmux ]] &&
+	[ -z "$TMUX" ] &&
+	! [ -e ~/storage/shared ]; then
+	if command -v tmux &>/dev/null; then
+		exec tmux
+	fi
+fi
+
+# kill all tmux sessions with no terminal emulator attached
+tmkill() {
+	LIST="$(tmux ls)"
+	TSESSIONS=""
+	while read -r line; do
+		if ! echo "$line" | grep 'attached'; then
+			tmux kill-session -t "$(echo $line | grep -oP '^\d\d?')"
+		fi
+	done <<<"$LIST"
+}
+
 #aliases
+alias firefox='glibc firefox'
 alias nnn='nnn -e'
 alias tmux='tmux -2'
 alias clo='cloner.sh'
@@ -142,11 +168,12 @@ alias se='fuzzyfinder.sh'
 alias la='ls -A'
 alias ..='cd ..'
 alias xi='sudo xbps-install'
+alias xu='sudo xbps-install -Su'
 alias xq='xbps-query'
 alias xr='sudo xbps-remove'
 alias weather='curl wttr.in'
-alias tmaster='tmux-autostart.sh'
-alias tfm='tmux new-session -A -s ranger tmux linkw -s master:fm'
+#alias tmaster='tmux-autostart.sh'
+alias tfm='tmux new-session -A -s nnn tmux linkw -s master:fm'
 alias tsm='tmux new-session -A -s sys tmux linkw -s master:sm'
 alias tmus='tmux new-session -A -s cmus tmux linkw -s master:mus'
 alias tnew='tmux new-session -A -s newsboat tmux linkw -s master:new'
@@ -155,6 +182,11 @@ alias tkill='tmux kill-session -t'
 alias tkillall='tmux kill-server'
 alias tbind='vim .config/tmux/tmux-cheatsheet.markdown'
 alias tls='tmux ls'
+alias ytdlm='youtube-dl -x --audio-format mp3 '
+alias ytdlv='youtube-dl '
+alias tmuxn='tmux new-session -s $$'
+_trap_exit() { tmux kill-session -t $$; }
+trap _trap_exit EXIT
 
 source "$XDG_CONFIG_HOME/oh-my-zsh/custom/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
 source "$XDG_CONFIG_HOME/oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"

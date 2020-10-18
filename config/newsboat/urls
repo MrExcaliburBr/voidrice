@@ -1,40 +1,48 @@
-https://www.youtube.com/feeds/videos.xml?channel_id=UCi8XrDg1bK_MJ0goOnbpTMQ	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCEOXxzW2vU0P-0THehuIIeg	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCEq19675KJXfZ5kdOubyPYw	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCEf5U1dB5a2e2S-XUlnhxSA	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCI0I5oXzmRIRp-xCXfgtmng	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC1pAUT1bL7fV9VBp3A6F8FQ	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCRE3NFNtdjR96-H4QG4U1Fg	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC9PljPVxsW8wP8M8so-3otQ	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCFzGyNKXPAglNq28qWYTDFA	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw	Youtube
-https://videos.lukesmith.xyz/feeds/videos.xml?videoChannelId=2			Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC7_YxT-KID8kRbqZo7MyscQ	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCb4pvsyqNrmBIGJFQxEukUA	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC-eqG9dW9ydhDGs_t67URMg	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCN5xN8gIljvWYnsj06V8WbQ	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCkmP59n7648ESU0PJsJMiRw	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC2bWZRiy1C-12hiwq-ZA-qg	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCMdGPato0IC5-zZjJIf-P9w	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC3sznuotAs2ohg_U__Jzj_Q	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCo_IB5145EVNcf8hw1Kku7w	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCv1Kcz-CuGM6mxzL3B1_Eiw	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCZrrEuHiQjN2CUo84g5tk7w	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCAYKj_peyESIMDp5LtHlH2A	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCIwpjx7xxcXPjH89XEVQr1w	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg	Youtube
-https://www.youtube.com/feeds/videos.xml?channel_id=UCqoAEDirJPjEUFcF2FklnBA	Youtube
+"query:Unread:unread=\"yes\""
 
-https://artixlinux.org/feed.php							"Distro news"
-https://www.archlinux.org/feeds/news/						"Distro news"
-https://voidlinux.org/atom.xml							"Distro news"	
-http://suckless.org/atom.xml							"Distro news"
+"query:Videos:tags # \"videos\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBb-2-R55RxZYPXgk9fJ-pA	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCi8XrDg1bK_MJ0goOnbpTMQ	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCEOXxzW2vU0P-0THehuIIeg	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCEq19675KJXfZ5kdOubyPYw	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCEf5U1dB5a2e2S-XUlnhxSA	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCVls1GmFKf6WlTraIb_IaJg	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCI0I5oXzmRIRp-xCXfgtmng	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC1pAUT1bL7fV9VBp3A6F8FQ	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkf4VIqu3Acnfzuk3kRIFwA	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCDivkE8Ckgk14fu1XChEp7w	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCRE3NFNtdjR96-H4QG4U1Fg	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC9PljPVxsW8wP8M8so-3otQ	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFzGyNKXPAglNq28qWYTDFA	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCXuqSBlHAE6Xw-yeJA0Tunw	videos
+https://videos.lukesmith.xyz/feeds/videos.xml?videoChannelId=2			videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7_YxT-KID8kRbqZo7MyscQ	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCb4pvsyqNrmBIGJFQxEukUA	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC7YOGHUfC1Tb6E4pudI9STA	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC-eqG9dW9ydhDGs_t67URMg	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCN5xN8gIljvWYnsj06V8WbQ	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCkmP59n7648ESU0PJsJMiRw	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2bWZRiy1C-12hiwq-ZA-qg	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCMdGPato0IC5-zZjJIf-P9w	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCNovoA9w0KnxyDP5bGrOYzg	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3sznuotAs2ohg_U__Jzj_Q	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCo_IB5145EVNcf8hw1Kku7w	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCv1Kcz-CuGM6mxzL3B1_Eiw	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCZrrEuHiQjN2CUo84g5tk7w	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCAYKj_peyESIMDp5LtHlH2A	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCIwpjx7xxcXPjH89XEVQr1w	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6nSFpj9HTCZ5t-N3Rm3-HA	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsnGwSIHyoYN0kiINAGUKxg	videos
+https://www.youtube.com/feeds/videos.xml?channel_id=UCqoAEDirJPjEUFcF2FklnBA	videos
+
+"query:Distro News:tags # \"news\""
+https://artixlinux.org/feed.php							"news"
+https://www.archlinux.org/feeds/news/						"news"
+https://voidlinux.org/atom.xml							"news"	
+http://suckless.org/atom.xml							"news"
  
-https://www.youtube.com/feeds/videos.xml?channel_id=UCftkAxeFBJTJzoeXQEvtzLw    "Music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCm5TtnejcDYLHZxSQcg8QHw    "Music"
-https://www.youtube.com/feeds/videos.xml?channel_id=UCfIXdjDQH9Fau7y99_Orpjw    "Music"
+"query:Music:tags # \"music\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCftkAxeFBJTJzoeXQEvtzLw    "music"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCm5TtnejcDYLHZxSQcg8QHw    "music"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfIXdjDQH9Fau7y99_Orpjw    "music"
