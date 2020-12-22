@@ -52,15 +52,19 @@ fi
 redshift -P -O 4500k
 sxhkd &
 ./code/scripts/dwm-bar.sh &
+#while true; do sleep 1s && xkbset bo 55 && xkbset st; done &
+xrandr --output eDP1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output HDMI1 --off --output HDMI2 --off --output VGA1 --mode 1440x900 --pos 1464x0 --rotate normal --output VIRTUAL1 --off
 picom -b &
 dunst &
-feh --randomize --bg-fill ~/pix/wall/gruvboxy
+feh --bg-fill ~/pix/wall/dual-monitor/anime-gal 
+#synclient TouchpadOff=1
 unclutter &
 setxkbmap -layout us,br -option grp:rctrl_rshift_toggle -option caps:escape_shifted_capslock
-tmux new-session -d -s master -n sm 'nvim'
-tmux new-window -t master -n fm 'nnn'
+tmux new-session -d -s master -n nvi 'nvim'
+tmux new-window -t master -n term 
+tmux new-window -t master -n fm 'ranger'
 tmux new-window -t master -n new 'newsboat'
-tmux new-window -t master -n chat 'cordless'
+tmux new-window -t master -n chat 'sleep 5s && cordless'
 tmux new-window -t master -n mus 'cmus'
  
 exec /usr/local/bin/dwm

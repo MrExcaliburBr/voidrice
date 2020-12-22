@@ -68,7 +68,8 @@ ZSH_THEME="avit"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-vim-mode zsh-syntax-highlighting) 
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -120,11 +121,14 @@ export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export WEECHAT_HOME="$XDG_CONFIG_HOME"/weechat
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export NNN_PLUG='f:fzcd;y:x2sel'
+export NNN_PLUG='f:fzcd;y:.cbcp'
+export NNN_FIFO=/tmp/nnn.fifo
 
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
+
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#928374'
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
@@ -185,9 +189,10 @@ alias tls='tmux ls'
 alias ytdlm='youtube-dl -x --audio-format mp3 '
 alias ytdlv='youtube-dl '
 alias tmuxn='tmux new-session -s $$'
+alias gimp='flatpak run org.gimp.GIMP'
 _trap_exit() { tmux kill-session -t $$; }
 trap _trap_exit EXIT
 
-source "$XDG_CONFIG_HOME/oh-my-zsh/custom/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
-source "$XDG_CONFIG_HOME/oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
+#source "$XDG_CONFIG_HOME/oh-my-zsh/custom/plugins/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
+#source "$XDG_CONFIG_HOME/oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh"
 

@@ -25,12 +25,12 @@ super + Right
 ########################################
 
 #Opens in a new window
-super + q ; {q,y,r,t,1,g,c,a,m,f}
-	qutebrowser --qt-flag ignore-gpu-blacklist --qt-flag enable-gpu-rasterization --qt-flag enable-native-gpu-memory-buffers --qt-flag num-raster-threads=4 --target window {_,youtube.com/feed/subscriptions,reddit.com,twitch.tv,monkey-type.com,github.com,https://classroom.google.com/u/1/h,https://www.youtube.com/channel/UCfbFento2_mCEyUgeiwImiQ,https://mega.nz/fm/BIxXCBJJ,https://www.freecodecamp.org/learn/} &
+super + q ; {q,y,r,t,1,g,c,a,m,f,4}
+	qutebrowser --qt-flag ignore-gpu-blacklist --qt-flag enable-gpu-rasterization --qt-flag enable-native-gpu-memory-buffers --qt-flag num-raster-threads=4 --target window {_,youtube.com/feed/subscriptions,reddit.com,twitch.tv,monkey-type.com,github.com,https://classroom.google.com/u/1/h,https://www.youtube.com/channel/UCfbFento2_mCEyUgeiwImiQ,https://mega.nz/fm/BIxXCBJJ,https://www.freecodecamp.org/learn/,https://www.4chan.org/frames} &
 
 #Opens in current focused haqutebrowser window
-super + ctrl + q ; {y,r,t,1,g,c,a,m,f}
-	qutebrowser --qt-flag ignore-gpu-blacklist --qt-flag enable-gpu-rasterization --qt-flag enable-native-gpu-memory-buffers --qt-flag num-raster-threads=4 --target tab {youtube.com/feed/subscriptions,reddit.com,twitch.tv,monkey-type.com,github.com,https://classroom.google.com/u/1/h,https://www.youtube.com/channel/UCfbFento2_mCEyUgeiwImiQ,https://mega.nz/fm/BIxXCBJJ,https://www.freecodecamp.org/learn/} &
+super + ctrl + q ; {y,r,t,1,g,c,a,m,f,4}
+	qutebrowser --qt-flag ignore-gpu-blacklist --qt-flag enable-gpu-rasterization --qt-flag enable-native-gpu-memory-buffers --qt-flag num-raster-threads=4 --target tab {youtube.com/feed/subscriptions,reddit.com,twitch.tv,monkey-type.com,github.com,https://classroom.google.com/u/1/h,https://www.youtube.com/channel/UCfbFento2_mCEyUgeiwImiQ,https://mega.nz/fm/BIxXCBJJ,https://www.freecodecamp.org/learn/,https://www.4chan.org/frames} &
 
 #Launch dmenu and searches in a new window what you typed
 super + q ; {Return}
@@ -53,15 +53,27 @@ super + m
 
 #Music Play, Pause, Next, Prev
 shift + ctrl + Up
-	st -e tmux new-session -A -s cmus tmux linkw -s master:mus; cmus-remote -p
+	st -e tmux new-session -A -s cmus tmux linkw -s master:mus
+
+XF86AudioPlay
+	cmus-remote -u
 
 shift + ctrl + Down
 	cmus-remote -u
-
+	
+XF86AudioPause
+	cmus-remote -u
+	
 shift + ctrl + Right
 	cmus-remote -n
 
+XF86AudioNext
+	cmus-remote -n
+
 shift + ctrl + Left
+	cmus-remote -r
+
+XF86AudioPrev
 	cmus-remote -r
 
 #=========================================================================
@@ -102,15 +114,15 @@ super + e
 
 #Full
 Print 
-	 maim  ~/pix/scrot/$(date +"%d-%m_%-H:%-M")_screenshot.png && notify-send "full screenshot" 
+	 maim  ~/pix/scrot/$(date +"%Y-%m-%d_%-H:%-M")_screenshot.png && notify-send "full screenshot" 
 
 #Selected
 ctrl + @Print
-	 notify-send "selected screenshot"; maim -s ~/pix/scrot/$(date +"%d-%m_%-H:%-M")_screenshot.png && notify-send "selected screenshot taken" 
+	 notify-send "selected screenshot"; maim -s ~/pix/scrot/$(date +"%Y-%m-%d_%-H:%-M")_screenshot.png && notify-send "selected screenshot taken" 
 
 #Focused 
 super + Print 
-	 maim -i $(xdotool getactivewindow) ~/pix/scrot/$(date +"%d-%m_%-H:%-M")_screenshot.png; notify-send "focused screenshot" 
+	 maim -i $(xdotool getactivewindow) ~/pix/scrot/$(date +"%Y-%m-%d_%-H:%-M")_screenshot.png; notify-send "focused screenshot" 
 
 #==============================================================================================================================================
-
+#test

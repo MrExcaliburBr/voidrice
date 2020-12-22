@@ -22,7 +22,7 @@ bind-key u pageup
 bind-key s sort
 bind-key S rev-sort
 
-macro y set browser "st -e setsid -f mpv --hwdec=vaapi --vo=vaapi --autofit-larger=35%x35% --force-window=yes %u"; open-in-browser ; set browser "qutebrowser %u"
+macro y set browser "st -e setsid -f mpv --hwdec=vaapi --vo=vaapi --autofit-larger=35%x35% --force-window=yes %u"; open-in-browser-and-mark-read ; set browser "qutebrowser %u"
 
 color background            color223     default
 color listnormal            color250     default
