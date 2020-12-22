@@ -1,0 +1,5 @@
+Host magi
+    Hostname 192.168.0.106 
+    User zezin 
+    Protocol 2
+    Port 479
